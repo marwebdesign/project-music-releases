@@ -1,25 +1,40 @@
 import React from 'react';
 import data from './data.json';
 import {Header} from './Components/Header'
-import {AlbumCover} from './Components/Releases'
-import {AlbumName} from './Components/Releases'
-import {ArtistName} from './Components/Releases'
+import {Cover} from './Components/Cover'
+import {Album} from './Components/Album'
+import {Artist} from './Components/Artist'
 
 console.log(data);
 
 export const App = () => {
   return (
     <>
-        <div>
-      <Header/>
-    </div>
+      <div>
+          <Header/>
+      </div>
+    <section className="container" >
     {data.albums.items.map((item)=> {
-      return <AlbumName name = {item.name}/>
-        // {item.artists.map((artist) => {
-        //   return <ArtistName name = {artist.name}/>
-        // })}
-      })} 
-   
+      return (
+        <>
+          <div className="albumCard">
+            <div className="coverImage">
+              <Cover 
+                image = {item.images[1].url}/>
+            </div>
+            <div className="albumName">
+              <Album 
+                name = {item.name}/>
+            </div> 
+            <div className="artistName">
+              <Artist 
+                name = {item.artists[0].name}/>
+            </div>
+          </div>  
+        </>
+      )  
+    })} 
+   </section>
     </>
   );
 }

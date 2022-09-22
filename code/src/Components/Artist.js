@@ -2,6 +2,14 @@ import React from "react"
 
 export const Artist = (props) => {
     return (
-            <h3>{props.name}</h3>
+        props.artist.map((artist, index) => {
+          return (
+            <a href={artist.external_urls.spotify} key={artist.name[index]}>
+             {artist.name}
+            </a>
+          )
+        })
+        
     )
+
 }

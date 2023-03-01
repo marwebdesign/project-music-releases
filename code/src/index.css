@@ -61,6 +61,8 @@ body {
   visibility: hidden;
   padding: 8px;
   filter: brightness(0) invert(1);
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
 }
 
 .albumName {
@@ -81,8 +83,12 @@ body {
 }
 
 /* Hover effects  */
-.coverImage :not(.iconsContainer):hover {
+.iconsContainer>img {
   opacity: 0.5;
+}
+
+.coverImage :not(.iconsContainer):hover {
+  opacity: 1;
 }
 
 .coverImage:hover .iconsContainer img {
@@ -90,8 +96,18 @@ body {
 }
 
 .playIcon:hover {
-  width: 50px;
+  transform: scale(1.4);
 }
+
+.heartIcon:hover,
+.dotsIcon:hover {
+  transform: scale(1.2);
+}
+
+
+/* .playIcon:hover {
+  width: 50px;
+} */
 
 a:hover {
   text-decoration: underline;

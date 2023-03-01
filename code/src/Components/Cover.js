@@ -5,9 +5,7 @@ export const Cover = (props) => {
     return (
         <>
             <img src={props.image}></img>
-            <div className="iconsContainer">
-                <AllIcons />
-            </div>
+            <AllIcons />
         </>
     )
 }
